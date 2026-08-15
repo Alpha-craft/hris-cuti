@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pengajuan_wfhs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_karyawan')->references('id')->on('karyawans');
+            $table->foreignId('id_karyawan')->constrained('karyawans')->onDelete('cascade');
             $table->string('koordinat_gps');
             $table->string('foto_selfie');
             $table->text('activity_log');
