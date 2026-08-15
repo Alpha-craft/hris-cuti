@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('pengajuan_lemburs', function (Blueprint $table) {
             $table->id();
+            $table->foreign('id_karyawan')->references('id')->on('karyawans');
+            $table->integer('durasi_lembur');
+            $table->integer('estimasi_tugas');
+            $table->boolean('status_overlap');
+            $table->boolean('status_approval');
             $table->timestamps();
         });
     }
