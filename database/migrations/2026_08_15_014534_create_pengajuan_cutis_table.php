@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('pengajuan_cutis', function (Blueprint $table) {
             $table->id();
+            $table->foreign('karyawan_id')->references('id')->on('karyawans');
+            $table->date('tanggal_pengajuan');
+            $table->text('alasan');
+            $table->boolean('status_approval');
             $table->timestamps();
         });
     }
