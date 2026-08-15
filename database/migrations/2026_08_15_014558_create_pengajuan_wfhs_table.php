@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('pengajuan_wfhs', function (Blueprint $table) {
             $table->id();
+            $table->foreign('id_karyawan')->references('id')->on('karyawans');
+            $table->string('koordinat_gps');
+            $table->string('foto_selfie');
+            $table->text('activity_log');
+            $table->boolean('status_kehadiran');
             $table->timestamps();
         });
     }
