@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class PengajuanLembur extends Model
 {
-    //
+    protected $guarded = [];
 }
